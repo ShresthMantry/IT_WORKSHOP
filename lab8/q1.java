@@ -24,13 +24,13 @@ public class q1 {
     public static void main(String[] args) {
         Area areaCalculator = new Area();
 
-        System.out.println("Area of a rectangle with length 5 and breadth 3: " +
-                areaCalculator.rectangleArea(5, 3));
+        System.out.println("Area of a rectangle with length 5 and breadth 6: " +
+                areaCalculator.rectangleArea(5, 6));
 
-        System.out.println("Area of a square with side length 4: " +
-                areaCalculator.squareArea(4));
+        System.out.println("Area of a square with side length 5: " +
+                areaCalculator.squareArea(5));
 
-        System.out.println("Area of a circle with radius 6: " +
-                areaCalculator.circleArea(6));
+        System.out.println("Area of a circle with radius 7: " +
+                areaCalculator.circleArea(7));
     }
 }
