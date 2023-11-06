@@ -1,7 +1,6 @@
-import java.util.*; 
-import java.lang.*; 
-import java.io.*; 
-
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
 class Student {
     public String name;
@@ -18,45 +17,40 @@ class Student {
     public String toString() {
         return "Name: " + name + ", Roll: " + roll + ", Birth Year: " + birthYear;
     }
-    
+
 }
 
-class Sortbyroll implements Comparator<Student> 
-{ 
-    public int compare(Student a, Student b) 
-    { 
+class Sortbyroll implements Comparator<Student> {
+    public int compare(Student a, Student b) {
         return Integer.compare(b.roll, a.roll);
-    } 
-} 
+    }
+}
 
+class Sortbybirthyear implements Comparator<Student> {
+    public int compare(Student a, Student b) {
+        return Integer.compare(a.birthYear, b.birthYear);
+    }
+}
 
-class Sortbybirthyear implements Comparator<Student> 
-{ 
-    public int compare(Student a, Student b) 
-    { 
-        return Integer.compare(a.birthYear,b.birthYear);
-    } 
-} 
-
-class SortByFirstName implements Comparator<Student> 
-{ 
-    public int compare(Student a, Student b) 
-    { 
+class SortByFirstName implements Comparator<Student> {
+    public int compare(Student a, Student b) {
         return a.name.split(" ")[0].compareTo(b.name.split(" ")[0]);
-    } 
-} 
+    }
+}
 
+// class SortByLastName implements Comparator<Student> {
+//     public int compare(Student a, Student b) {
+//         return a.name.split(" ")[1].compareTo(b.name.split(" ")[1]);
+//     }
+// }
 
-class SortByLastName implements Comparator<Student> 
-{ 
-    public int compare(Student a, Student b) 
-    { 
-        return a.name.split(" ")[1].compareTo(b.name.split(" ")[1]);
-    } 
-} 
-
-
-
+class SortBytitle implements Comparator<Student>
+{
+public int compare(Student a,Student b)
+{
+return a.name.split(“ ”)[1].compareTo(b.name.split(“ “)[1]);
+}
+}
 
 
 
@@ -64,9 +58,8 @@ public class q {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Student> students = new ArrayList<>();
-        for(int i = 0;i<5;i++)
-        { 
-            System.out.println("Enter Roll for student "+(i+1));
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Enter Roll for student " + (i + 1));
             int roll = sc.nextInt();
             String a = sc.nextLine();
             System.out.println("Enter Birth year");
@@ -76,7 +69,6 @@ public class q {
             String name = sc.nextLine();
             students.add(new Student(name, roll, birthYear));
         }
-
 
         System.out.println("Sorted Roll number wise -> ");
         Collections.sort(students, new Sortbyroll());
@@ -90,7 +82,6 @@ public class q {
             System.out.println(student);
         }
 
-
         System.out.println("Sorted First name wise -> ");
         Collections.sort(students, new SortByFirstName());
         for (Student student : students) {
@@ -102,6 +93,6 @@ public class q {
         for (Student student : students) {
             System.out.println(student);
         }
-        
+
     }
 }
